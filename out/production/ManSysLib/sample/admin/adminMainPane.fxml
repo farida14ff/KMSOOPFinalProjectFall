@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="534.0" prefWidth="619.0" style="-fx-background-color: #1aa4ee;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.admin.MainPaneAdminController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="534.0" prefWidth="692.0" style="-fx-background-color: #1aa4ee;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.admin.MainPaneAdminController">
    <children>
       <ImageView fitHeight="49.0" fitWidth="43.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -18,7 +18,7 @@
       </ImageView>
       <Label layoutX="67.0" layoutY="41.0" text="Library Management System" textFill="WHITE" />
       <Label layoutX="67.0" layoutY="14.0" prefHeight="23.0" prefWidth="43.0" text="IAU" textFill="WHITE" />
-      <Button fx:id="logoutButton" layoutX="501.0" layoutY="19.0" mnemonicParsing="false" onAction="#handleClose" prefHeight="31.0" prefWidth="85.0" style="-fx-background-color: #151928; -fx-border-color: #a0a2ab;" text="Logout" textFill="WHITE">
+      <Button fx:id="logoutButton" layoutX="501.0" layoutY="19.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="85.0" style="-fx-background-color: #151928; -fx-border-color: #a0a2ab;" text="Logout" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
@@ -26,20 +26,20 @@
             <Insets />
          </opaqueInsets>
       </Button>
-      <AnchorPane layoutY="83.0" prefHeight="63.0" prefWidth="619.0" style="-fx-background-color: #787e84;">
+      <AnchorPane layoutY="83.0" prefHeight="63.0" prefWidth="692.0" style="-fx-background-color: #787e84;">
          <children>
             <Button fx:id="addBookAdminBtn" layoutX="119.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: #787e84;" text="Add book">
                <font>
                   <Font size="17.0" />
                </font>
             </Button>
-            <Button fx:id="listOfBooksadminBtn" layoutX="368.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: #787e84;" text="List of  all books">
+            <Button fx:id="listOfBooksadminBtn" layoutX="436.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: #787e84;" text="List of  all books">
                <font>
                   <Font size="17.0" />
                </font>
             </Button>
          </children>
       </AnchorPane>
-      <VBox fx:id="mainContent" layoutY="143.0" prefHeight="389.0" prefWidth="619.0" style="-fx-background-color: #e7e8e6;" />
+      <VBox fx:id="mainContent" layoutY="143.0" prefHeight="394.0" prefWidth="692.0" style="-fx-background-color: #e7e8e6;" />
    </children>
 </AnchorPane>

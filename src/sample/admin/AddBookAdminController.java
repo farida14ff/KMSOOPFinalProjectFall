@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 import sample.db.DataBaseHandler;
 import sample.mosels.Book;
 
@@ -46,7 +47,7 @@ public class AddBookAdminController implements Initializable {
     private Button addBookBtn;
 
     @FXML
-    private Label addCategories;
+    private TextField addCategories;
 
     @FXML
     private TextField addID;
@@ -68,7 +69,7 @@ public class AddBookAdminController implements Initializable {
             else {
 
                 String title=addTitle.getText();
-                int isbn=Integer.parseInt(addID.getText());
+                String isbn=addID.getText();
                 String author=addAuthor.getText();
                 String publisher=addPublisher.getText();
                 String category=addCategories.getText();
@@ -76,14 +77,12 @@ public class AddBookAdminController implements Initializable {
                 int rating= Integer.parseInt(addRating.getText());
 
 
-                Book bookobj=new Book(title,isbn,author,publisher,category,year,rating);
+                Book bookobj=new Book(isbn,title,author,publisher,category,year,rating);
 
 
                 try {
                     dbAction.addBook(bookobj);
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                } catch (ClassNotFoundException e) {
+                } catch (SQLException | ClassNotFoundException e) {
                     e.printStackTrace();
                 }
 
@@ -97,6 +96,9 @@ public class AddBookAdminController implements Initializable {
                 addID.clear();
                 addAuthor.clear();
                 addPublisher.clear();
+                addCategories.clear();
+                addYear.clear();
+                addRating.clear();
 
 
             }

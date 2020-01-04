@@ -1,4 +1,4 @@
-package sample.admin;
+package sample.user;
 
 import java.io.IOException;
 import java.net.URL;
@@ -8,17 +8,15 @@ import java.util.logging.Logger;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import sample.login.Controller;
 
-public class MainPaneAdminController implements Initializable {
+public class MainPaneUserController {
 
     @FXML
     private ResourceBundle resources;
@@ -30,27 +28,30 @@ public class MainPaneAdminController implements Initializable {
     private Button logoutButton;
 
     @FXML
-    private Button addBookAdminBtn;
+    private Button allBooksBtn;
 
     @FXML
-    private Button listOfBooksadminBtn;
+    private Button allMembersBtn;
+
+    @FXML
+    private Button personalInfoBtn;
 
     @FXML
     private VBox mainContent;
 
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    @FXML
+    void initialize() {
         try {
-            Parent pane= FXMLLoader.load(getClass().getResource("/sample/admin/adminAllBooks.fxml"));
+            Parent pane= FXMLLoader.load(getClass().getResource("/sample/user/allBooksUser.fxml"));
             mainContent.getChildren().setAll(pane);
 
         } catch (IOException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        addBookAdminBtn.setOnAction(evetn ->{
+        allBooksBtn.setOnAction(evetn ->{
             try {
-                Parent pane = FXMLLoader.load(getClass().getResource("/sample/admin/adminAddBook.fxml"));
+                Parent pane = FXMLLoader.load(getClass().getResource("/sample/user/allBooksUser.fxml"));
                 mainContent.getChildren().setAll(pane);
 
             }catch (IOException ex){
@@ -58,9 +59,19 @@ public class MainPaneAdminController implements Initializable {
             }
         });
 
-        listOfBooksadminBtn.setOnAction(event ->{
+        allMembersBtn.setOnAction(event ->{
             try {
-                Parent pane= FXMLLoader.load(getClass().getResource("/sample/admin/adminAllBooks.fxml"));
+                Parent pane= FXMLLoader.load(getClass().getResource("/sample/user/allMembersUser.fxml"));
+                mainContent.getChildren().setAll(pane);
+
+            } catch (IOException ex) {
+                Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
+
+        personalInfoBtn.setOnAction(event ->{
+            try {
+                Parent pane= FXMLLoader.load(getClass().getResource("/sample/user/personalInfoUser.fxml"));
                 mainContent.getChildren().setAll(pane);
 
             } catch (IOException ex) {
@@ -84,6 +95,5 @@ public class MainPaneAdminController implements Initializable {
             }
         });
     }
-
 
 }

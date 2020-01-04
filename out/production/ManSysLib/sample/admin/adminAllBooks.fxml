@@ -9,20 +9,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="389.0" prefWidth="619.0" style="-fx-background-color: #e7e8e6;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.admin.AllBooksAdminController">
+<AnchorPane prefHeight="389.0" prefWidth="692.0" style="-fx-background-color: #e7e8e6;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.admin.AllBooksAdminController">
    <children>
-      <TableView fx:id="bookTable" layoutX="7.0" layoutY="50.0" prefHeight="243.0" prefWidth="606.0">
+      <TableView fx:id="bookTable" layoutX="7.0" layoutY="50.0" prefHeight="243.0" prefWidth="681.0">
          <columns>
-            <TableColumn fx:id="idColumn" prefWidth="48.0" text="ID" />
-            <TableColumn fx:id="titleColumn" prefWidth="144.0" text="Title" />
-            <TableColumn fx:id="authorColumn" prefWidth="99.0" text="Author" />
-            <TableColumn fx:id="publisherColumn" prefWidth="103.0" text="Publisher" />
+            <TableColumn fx:id="isbnColumn" prefWidth="96.0" text="ID" />
+            <TableColumn fx:id="titleColumn" prefWidth="145.0" text="Title" />
+            <TableColumn fx:id="authorColumn" prefWidth="122.0" text="Author" />
+            <TableColumn fx:id="publisherColumn" prefWidth="110.0" text="Publisher" />
             <TableColumn fx:id="categoriesColumn" prefWidth="89.0" text="Categories" />
-            <TableColumn fx:id="yearColumn" prefWidth="64.0" text="Year" />
-            <TableColumn fx:id="ratingColumn" prefWidth="56.0" text="Rating" />
+            <TableColumn fx:id="yearColumn" prefWidth="61.0" text="Year" />
+            <TableColumn fx:id="ratingColumn" prefWidth="57.0" text="Rating" />
          </columns>
       </TableView>
-      <Label fx:id="lableListOAB" layoutX="218.0" layoutY="14.0" prefHeight="43.0" prefWidth="170.0" text="List of  all books">
+      <Label fx:id="lableListOAB" layoutX="280.0" layoutY="14.0" prefHeight="43.0" prefWidth="170.0" text="List of  all books">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
@@ -33,14 +33,14 @@
             <Insets left="5.0" />
          </padding>
       </Label>
-      <TextField fx:id="editId" layoutX="8.0" layoutY="304.0" prefHeight="26.0" prefWidth="32.0" />
-      <TextField fx:id="editTitle" layoutX="49.0" layoutY="304.0" prefHeight="26.0" prefWidth="142.0" />
-      <TextField fx:id="editAuthor" layoutX="198.0" layoutY="304.0" prefHeight="26.0" prefWidth="98.0" />
-      <TextField fx:id="editPublisher" layoutX="303.0" layoutY="304.0" prefHeight="26.0" prefWidth="98.0" />
-      <TextField fx:id="editCategories" layoutX="410.0" layoutY="304.0" prefHeight="26.0" prefWidth="92.0" />
-      <TextField fx:id="editYear" layoutX="509.0" layoutY="304.0" prefHeight="26.0" prefWidth="54.0" />
-      <TextField fx:id="editRating" layoutX="570.0" layoutY="304.0" prefHeight="26.0" prefWidth="43.0" />
+      <TextField fx:id="editId" layoutX="8.0" layoutY="304.0" prefHeight="26.0" prefWidth="98.0" />
+      <TextField fx:id="editTitle" layoutX="113.0" layoutY="304.0" prefHeight="26.0" prefWidth="136.0" />
+      <TextField fx:id="editAuthor" layoutX="257.0" layoutY="304.0" prefHeight="26.0" prefWidth="108.0" />
+      <TextField fx:id="editPublisher" layoutX="372.0" layoutY="304.0" prefHeight="26.0" prefWidth="98.0" />
+      <TextField fx:id="editCategories" layoutX="476.0" layoutY="304.0" prefHeight="26.0" prefWidth="92.0" />
+      <TextField fx:id="editYear" layoutX="574.0" layoutY="304.0" prefHeight="26.0" prefWidth="54.0" />
+      <TextField fx:id="editRating" layoutX="635.0" layoutY="304.0" prefHeight="26.0" prefWidth="43.0" />
       <Button fx:id="editAdminBtn" layoutX="121.0" layoutY="349.0" mnemonicParsing="false" onAction="#editAdminBtnAct" prefHeight="26.0" prefWidth="154.0" text="Edit" />
-      <Button fx:id="dalateAdminBtn" layoutX="352.0" layoutY="349.0" mnemonicParsing="false" onAction="#deleteButtonAction" prefHeight="26.0" prefWidth="154.0" text="Delete" />
+      <Button fx:id="deleteAdminBtn" layoutX="352.0" layoutY="349.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="154.0" text="Delete" />
    </children>
 </AnchorPane>

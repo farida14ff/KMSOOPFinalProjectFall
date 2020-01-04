@@ -2,6 +2,7 @@ package sample.login;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -50,12 +51,30 @@ public class SignUpController {
     private RadioButton sgnUpCheckboxStudent;
 
     @FXML
+    private Button goBackLoginButton;
+
+    @FXML
     void initialize() {
 
         signUpButton.setOnAction(event ->{
             signupMewUser();
-            openNewWindow("/sample/menu/menu.fxml");
+            openNewWindow("/sample/user/mainContentUser.fxml");
 
+        });
+
+        goBackLoginButton.setOnAction(event -> {
+//            openNewScene("/gui/SignUp.fxml");
+            try {
+                Parent tableViewParent = FXMLLoader.load(getClass().getResource("/sample/login/sample.fxml"));
+                Scene tableViewScene = new Scene(tableViewParent);
+
+                Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                window.setScene(tableViewScene);
+                window.show();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
         });
 
 

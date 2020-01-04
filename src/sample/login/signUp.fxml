@@ -42,16 +42,6 @@
                 <Font size="17.0" />
             </font>
         </PasswordField>
-        <RadioButton fx:id="sgnUpCheckboxStudent" layoutX="202.0" layoutY="288.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="97.0" text="Student" textFill="WHITE">
-            <font>
-                <Font size="15.0" />
-            </font>
-        </RadioButton>
-        <RadioButton fx:id="sgnUpChecsgnUpCheckboxCookkboxAdmin" layoutX="324.0" layoutY="285.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="78.0" text="Admin" textFill="WHITE">
-            <font>
-                <Font size="15.0" />
-            </font>
-        </RadioButton>
         <Button fx:id="signUpButton" layoutX="177.0" layoutY="343.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="246.0" style="-fx-background-color: #2196f3;" text="Sign UP" textFill="WHITE" />
     </children>
 </AnchorPane>

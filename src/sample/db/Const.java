@@ -13,7 +13,7 @@ public class Const {
 
     public static final String BM_MEAL_LIST_TABLE = "bm_meal_list";
 
-    public static final String BOOK_ADMIN_ID = "books_id";
+    public static final String BOOK_ADMIN_ID = "isbn";
     public static final String TITLE = "title";
     public static final String AUTHOR = "author";
     public static final String PUBLISHER = "publisher";

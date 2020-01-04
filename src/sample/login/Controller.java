@@ -91,7 +91,7 @@ public class Controller {
 
 //        dbHandler.getUser(user);
 
-        ResultSet userResultSet = dbHandler.getUser(user); //выделить память
+        ResultSet userResultSet = dbHandler.getUser(user);
         ResultSet adminResultSet = dbHandler.getAdmin(admin);
 
         int userCounter = 0;
@@ -106,7 +106,7 @@ public class Controller {
         }
 
         if (userCounter >= 1) {
-            openNewWindow("/sample/menu/menu.fxml");
+            openNewWindow("/sample/user/mainContentUser.fxml");
         } else {
             animation();
         }

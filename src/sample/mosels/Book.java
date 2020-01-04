@@ -3,7 +3,7 @@ package sample.mosels;
 public class Book {
 
     protected String title;
-    protected int books_id;
+    protected String isbn;
     protected String author;
     protected String publisher;
     private String categories;
@@ -11,9 +11,9 @@ public class Book {
     private int rating;
 
 
-    public Book(String title, int books_id, String author, String publisher, String categories, int year, int rating) {
+    public Book(String isbn,String title, String author, String publisher, String categories, int year, int rating) {
         this.title = title;
-        this.books_id = books_id;
+        this.isbn = isbn;
         this.author = author;
         this.publisher = publisher;
         this.categories = categories;
@@ -21,11 +21,18 @@ public class Book {
         this.rating = rating;
     }
 
-    public Book(String title, String id, String author, String publisher) {
-    }
 
     public Book() {
 
+    }
+
+    public Book(String title, String author, String publisher, String categories, int year, int rating) {
+        this.title = title;
+        this.author = author;
+        this.publisher = publisher;
+        this.categories = categories;
+        this.year = year;
+        this.rating = rating;
     }
 
     public String getTitle() {
@@ -36,12 +43,12 @@ public class Book {
         this.title = title;
     }
 
-    public int getIsbn() {
-        return books_id;
+    public String getIsbn() {
+        return isbn;
     }
 
-    public void setIsbn(int isbn) {
-        this.books_id = isbn;
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
     }
 
     public String getAuthor() {
@@ -89,7 +96,7 @@ public class Book {
     public String toString() {
         return "BookInfo{" +
                 "title='" + title + '\'' +
-                ", books_id='" + books_id + '\'' +
+                ", books_id='" + isbn + '\'' +
                 ", author='" + author + '\'' +
                 ", publisher='" + publisher + '\'' +
                 ", categories='" + categories + '\'' +

@@ -1,6 +1,7 @@
 package sample.db;
 
 
+import javafx.beans.binding.BooleanBinding;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import sample.login.User;
@@ -94,9 +95,9 @@ public class DataBaseHandler extends Configs {
         String query = "UPDATE bm_meal_list "
                 + "SET title ='"+bookinfo.getTitle()+"',author='"+bookinfo.getAuthor()+"',publisher='"+bookinfo.getPublisher()
                 +"',categories='"+bookinfo.getCategories() +"',year='"+bookinfo.getYear()
-                +"',rating='"+bookinfo.getRating() + "' WHERE books_id = '"+bookinfo.getIsbn()+"'";
+                +"',rating='"+bookinfo.getRating() + "' WHERE isbn = '"+bookinfo.getIsbn()+"'";
         if(statement.executeUpdate(query)>0){
-            return "bookinf updated successfully";
+            return "books information updated successfully";
         }else{
             return "failed";
         }
@@ -114,53 +115,75 @@ public class DataBaseHandler extends Configs {
 
         while(rs.next()){
 
+            String id = rs.getString(Const.BOOK_ADMIN_ID);
             String title = rs.getString(Const.TITLE);
-            int id = rs.getInt(Const.BOOK_ADMIN_ID);
             String author = rs.getString(Const.AUTHOR);
             String publisher = rs.getString(Const.PUBLISHER);
             String categories = rs.getString(Const.CATEGORIES);
             int year = rs.getInt(Const.YEAR);
             int rating = rs.getInt(Const.RATING);
 
-            Book book=new Book(title,id,author,publisher,categories, year, rating);
+            Book book=new Book(id,title,author,publisher,categories, year, rating);
             bookList.add(book);
         }
         return bookList;
 
     }
 
-    public String addBook(Book book) throws SQLException, ClassNotFoundException {
 
+    public ObservableList<User> getAllUsers() throws SQLException, ClassNotFoundException {
+
+        ObservableList<User> userList= FXCollections.observableArrayList();
+
+        Connection conn = getDbConnection();
+        Statement statement=conn.createStatement();
+        String query="SELECT * FROM "+ Const.USER_TABLE;
+
+        ResultSet rs=statement.executeQuery(query);
+
+        while(rs.next()){
+
+            String firstname = rs.getString(Const.USER_FIRSTNAME);
+            String lastname = rs.getString(Const.USER_LASTNAME);
+//            String email = rs.getString(Const.USER_FIRSTNAME);
+
+
+            User user=new User(firstname,lastname);
+            userList.add(user);
+        }
+        return userList;
+
+    }
+
+
+    public String addBook(Book book) throws SQLException, ClassNotFoundException {
         Connection conn=getDbConnection();
         Statement statement=conn.createStatement();
 
-        String insert = "INSERT INTO " + Const.BM_MEAL_LIST_TABLE + "(" +
-                Const.TITLE + "," + Const.BOOK_ADMIN_ID +
-                "," + Const.PUBLISHER + "," + Const.CATEGORIES +
-                "," + Const.AUTHOR + "," + Const.YEAR + "," + Const.RATING +
-                ")" + "VALUES(?,?,?,?,?,?,?)";
+        String query="INSERT INTO bm_meal_list "
+                + "VALUES ('"+book.getIsbn()+"','"+book.getTitle()+"','"+book.getAuthor()+"','"+book.getPublisher()+"','"+book.getCategories()+"','"
+                +book.getYear()+"',"+book.getRating()+")";
 
-        try {
-            PreparedStatement prSt = getDbConnection().prepareStatement(insert);
-            prSt.setString(1, book.getTitle());
-            prSt.setInt(2, book.getIsbn());
-            prSt.setString(3, book.getPublisher());
-            prSt.setString(4, book.getCategories());
-            prSt.setString(5, book.getAuthor());
-            prSt.setInt(6, book.getYear());
-            prSt.setInt(7, book.getRating());
-
-
-            prSt.executeUpdate();
-        } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        if(statement.executeUpdate(insert)>0){
+        if(statement.executeUpdate(query)>0){
             return "Bookinfo added successfully";
         }else{
             return "failed";
         }
 
+
+
+    }
+
+    public String deleteBooks(ObservableList<Book> selectedBooks) throws SQLException, ClassNotFoundException {
+        Connection conn=getDbConnection();
+        Statement statement=conn.createStatement();
+
+        for(Book bookinfo:selectedBooks){
+            String query="DELETE FROM "+Const.BM_MEAL_LIST_TABLE+" WHERE "+Const.BOOK_ADMIN_ID+" = '"+bookinfo.getIsbn()+"'";
+            statement.executeUpdate(query);
+
+        }
+        return null;
     }
 
 }
