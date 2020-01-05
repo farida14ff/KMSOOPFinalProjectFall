@@ -13,6 +13,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import sample.db.DataBaseHandler;
+import sample.mosels.User;
 
 import java.io.IOException;
 import java.net.URL;

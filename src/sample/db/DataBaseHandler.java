@@ -1,11 +1,10 @@
 package sample.db;
 
 
-import javafx.beans.binding.BooleanBinding;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
-import sample.login.User;
+import sample.mosels.User;
 import sample.mosels.Admin;
 import sample.mosels.Book;
 

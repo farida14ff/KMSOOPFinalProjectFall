@@ -1,4 +1,4 @@
-package sample.login;
+package sample.mosels;
 
 public class User {
     private String firstName;
@@ -22,6 +22,13 @@ public class User {
     public User(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+    public User(String firstName, String lastName, String userName, String password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userName = userName;
+        this.password = password;
     }
 
     public String getFirstName() {
@@ -64,5 +71,9 @@ public class User {
         this.gender = gender;
     }
 
-
+    @Override
+    public String toString() {
+        return "user{firtname="+getFirstName()+", lastname="+getLastName()
+                +" ,username="+getUserName()+", password="+getPassword()+"}";
+    }
 }

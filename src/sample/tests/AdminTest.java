@@ -43,7 +43,7 @@ public class AdminTest {
     }
 
     @Test
-    public void ToStringTest(){
+    public void toStringTest(){
         assertEquals("admin{id=1, email=admin, password=pass}",admin.toString());
     }
 

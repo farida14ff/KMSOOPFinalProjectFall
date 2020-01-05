@@ -65,7 +65,35 @@ public class BookTest {
     }
 
     @Test
-    public void ToStringTest(){
-        assertEquals("admin{id=1, email=admin, password=pass}", book.toString());
+    public void getYearTest(){
+        assertEquals(2020,book.getYear());
+    }
+
+    @Test
+    public void setYearTest(){
+        book.setYear(2020);
+        assertEquals(2020,book.getYear());
+    }
+
+    @Test
+    public void getRating(){
+        assertEquals(5,book.getRating());
+    }
+
+    @Test
+    public void setRatingTest(){
+        book.setRating(5);
+        assertEquals(5,book.getRating());
+    }
+
+    @Test
+    public void toStringTest(){
+        assertEquals("BookInfo{" +
+                "title='title', books_id='11-12-13', author='author'," +
+                " publisher='publisher'" +
+                ", categories='categories'"+
+                ", year=2020" +
+                ", rating=5"+
+                '}', book.toString());
     }
 }

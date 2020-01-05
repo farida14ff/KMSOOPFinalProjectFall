@@ -6,24 +6,15 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
-import sample.admin.AddBookAdminController;
 import sample.admin.AllBooksAdminController;
 import sample.db.Configs;
 import sample.db.Const;
 import sample.db.DataBaseHandler;
-import sample.login.User;
 import sample.mosels.Book;
 
 public class AllBooksUserController extends Configs {

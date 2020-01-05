@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import sample.db.DataBaseHandler;
 import sample.login.animations.Shake;
 import sample.mosels.Admin;
+import sample.mosels.User;
 
 import java.io.IOException;
 import java.sql.ResultSet;
