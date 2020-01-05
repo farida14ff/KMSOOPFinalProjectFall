@@ -41,7 +41,7 @@ public class Admin {
 
     @Override
     public String toString() {
-        return "adminInfo{" + "id=" + id + ", email=" + email + ", password=" + password + '}';
+        return "admin{" + "id=" + id + ", email=" + email + ", password=" + password + '}';
     }
 
 }

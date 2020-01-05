@@ -55,6 +55,8 @@ public class AllBooksAdminController implements Initializable {
     @FXML
     private TableColumn<Book, Integer> ratingColumn;
 
+
+
     @FXML
     private Label lableListOAB;
 
@@ -103,6 +105,7 @@ public class AllBooksAdminController implements Initializable {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+
         isbnColumn.setCellValueFactory(new PropertyValueFactory<Book,String>(Const.BOOK_ADMIN_ID));
         titleColumn.setCellValueFactory(new PropertyValueFactory<Book, String>(Const.TITLE));
         authorColumn.setCellValueFactory(new PropertyValueFactory<Book,String>(Const.AUTHOR));
@@ -110,6 +113,7 @@ public class AllBooksAdminController implements Initializable {
         categoriesColumn.setCellValueFactory(new PropertyValueFactory<Book, String>(Const.CATEGORIES));
         yearColumn.setCellValueFactory(new PropertyValueFactory<Book,Integer>(Const.YEAR));
         ratingColumn.setCellValueFactory(new PropertyValueFactory<Book,Integer>(Const.RATING));
+
         bookTable.setItems(bookList);
 
         deleteAdminBtn.setOnAction(actionEvent -> {
@@ -137,6 +141,8 @@ public class AllBooksAdminController implements Initializable {
                 ex.printStackTrace();
             }
         });
+
+
 
     }
 

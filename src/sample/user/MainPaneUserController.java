@@ -24,8 +24,7 @@ public class MainPaneUserController {
     @FXML
     private URL location;
 
-    @FXML
-    private Button logoutButton;
+
 
     @FXML
     private Button allBooksBtn;
@@ -59,16 +58,6 @@ public class MainPaneUserController {
             }
         });
 
-        allMembersBtn.setOnAction(event ->{
-            try {
-                Parent pane= FXMLLoader.load(getClass().getResource("/sample/user/allMembersUser.fxml"));
-                mainContent.getChildren().setAll(pane);
-
-            } catch (IOException ex) {
-                Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        });
-
         personalInfoBtn.setOnAction(event ->{
             try {
                 Parent pane= FXMLLoader.load(getClass().getResource("/sample/user/personalInfoUser.fxml"));
@@ -79,21 +68,7 @@ public class MainPaneUserController {
             }
         });
 
-        logoutButton.setOnAction(actionEvent -> {
-            try{
-                Parent tableViewParent = FXMLLoader.load(getClass().getResource("/sample/login/sample.fxml"));
-                Scene tableViewScene = new Scene(tableViewParent);
 
-                //This line gets the Stage information
-                Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-
-                window.setScene(tableViewScene);
-                window.show();
-            }
-            catch (Exception ex){
-                ex.printStackTrace();
-            }
-        });
     }
 
 }

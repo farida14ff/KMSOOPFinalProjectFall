@@ -22,7 +22,7 @@
             <TableColumn fx:id="ratingColumn" prefWidth="57.0" text="Rating" />
          </columns>
       </TableView>
-      <Label fx:id="lableListOAB" layoutX="280.0" layoutY="14.0" prefHeight="43.0" prefWidth="170.0" text="List of  all books">
+      <Label fx:id="lableListOAB" layoutX="261.0" prefHeight="43.0" prefWidth="170.0" text="List of  all books">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>

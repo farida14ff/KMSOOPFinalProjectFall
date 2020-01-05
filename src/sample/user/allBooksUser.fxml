@@ -7,6 +7,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -23,7 +24,7 @@
             <TableColumn fx:id="ratingColumn" prefWidth="60.0" text="Rating" />
          </columns>
       </TableView>
-      <Label fx:id="lableListOAB" layoutX="259.0" layoutY="14.0" prefHeight="43.0" prefWidth="170.0" text="List of  all books">
+      <Label fx:id="lableListOAB" layoutX="261.0" prefHeight="43.0" prefWidth="170.0" text="List of  all books">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
@@ -34,10 +35,16 @@
             <Insets left="5.0" />
          </padding>
       </Label>
-      <TextField fx:id="searchTextField" layoutX="7.0" layoutY="57.0" />
-      <RadioButton fx:id="selectTitleRB" layoutX="14.0" layoutY="91.0" mnemonicParsing="false" text="Title" />
-      <RadioButton fx:id="selectAuthorRB" layoutX="104.0" layoutY="91.0" mnemonicParsing="false" text="Author" />
-      <Button fx:id="searchButn" layoutX="197.0" layoutY="57.0" mnemonicParsing="false" text="Search" />
-      <Button fx:id="discardBtn" layoutX="275.0" layoutY="57.0" mnemonicParsing="false" text="Discard" />
+      <TextField fx:id="searchTextField" layoutX="7.0" layoutY="57.0" prefHeight="26.0" prefWidth="249.0" promptText="Search ..." />
+      <RadioButton fx:id="selectTitleRB" layoutX="14.0" layoutY="91.0" mnemonicParsing="false" selected="true" text="Title">
+         <toggleGroup>
+            <ToggleGroup fx:id="listOfBooks" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="selectAuthorRB" layoutX="93.0" layoutY="91.0" mnemonicParsing="false" text="Author" toggleGroup="$listOfBooks" />
+      <Button fx:id="searchButn" layoutX="281.0" layoutY="57.0" mnemonicParsing="false" text="Search" />
+      <Button fx:id="discardBtn" layoutX="361.0" layoutY="57.0" mnemonicParsing="false" text="Discard" />
+      <RadioButton fx:id="selectYearRB" layoutX="191.0" layoutY="91.0" mnemonicParsing="false" text="Year" toggleGroup="$listOfBooks" />
+      <Button fx:id="issueButton" layoutX="560.0" layoutY="91.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" text="Issue Book" />
+      <TextField fx:id="takeByIsbnTF" layoutX="568.0" layoutY="57.0" prefHeight="26.0" prefWidth="83.0" promptText="11-12-13" />
    </children>
 </AnchorPane>

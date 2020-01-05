@@ -20,8 +20,7 @@
 //    @FXML
 //    private ResourceBundle resources;
 //
-//    @FXML
-//    private URL location;
+//    @FXML//    private URL location;
 //
 //    @FXML
 //    private Button logoutButton;

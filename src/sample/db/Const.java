@@ -21,6 +21,16 @@ public class Const {
     public static final String YEAR = "year";
     public static final String RATING = "rating";
 
+     public static final String TAKEN_BOOKS_TABLE = "taken_books";
+
+    public static final String TB_ISBN = "isbn";
+    public static final String TB_TITLE = "title";
+    public static final String TB_AUTHOR = "author";
+    public static final String TB_PUBLISHER = "publisher";
+    public static final String TB_CATEGORIES = "categories";
+    public static final String TB_YEAR = "year";
+    public static final String TB_RATING = "rating";
+
 
 
 

@@ -5,23 +5,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="389.0" prefWidth="687.0" style="-fx-background-color: #e7e8e6;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.user.PersonalInfoUserController">
    <children>
-      <TableView fx:id="bookTable" layoutX="7.0" layoutY="132.0" prefHeight="243.0" prefWidth="673.0">
-         <columns>
-            <TableColumn fx:id="isbnColumn" prefWidth="48.0" text="ID" />
-            <TableColumn fx:id="titleColumn" prefWidth="165.0" text="Title" />
-            <TableColumn fx:id="authorColumn" prefWidth="110.0" text="Author" />
-            <TableColumn fx:id="publisherColumn" prefWidth="110.0" text="Publisher" />
-            <TableColumn fx:id="categoriesColumn" prefWidth="100.0" text="Categories" />
-            <TableColumn fx:id="yearColumn" prefWidth="74.0" text="Year" />
-            <TableColumn fx:id="ratingColumn" prefWidth="62.0" text="Rating" />
-         </columns>
-      </TableView>
-      <Label fx:id="lableListOAB" layoutX="234.0" layoutY="14.0" prefHeight="43.0" prefWidth="219.0" text="Personal Information">
+      <Label fx:id="lableListOAB" layoutX="234.0" layoutY="8.0" prefHeight="43.0" prefWidth="219.0" text="Personal Information">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
@@ -32,8 +22,19 @@
             <Insets left="5.0" />
          </padding>
       </Label>
-      <Button fx:id="issueButton" layoutX="14.0" layoutY="63.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="62.0" text="Issue" />
-      <Button fx:id="returnButn" layoutX="14.0" layoutY="97.0" mnemonicParsing="false" text="Return" />
-      <Button fx:id="exitButn" layoutX="611.0" layoutY="71.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="62.0" text="Exit" />
+      <Button fx:id="returnButn" layoutX="558.0" layoutY="90.0" mnemonicParsing="false" text="Return Book" />
+      <Button fx:id="exitButn" layoutX="14.0" layoutY="96.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="62.0" text="Exit" />
+      <TableView fx:id="bookTable" layoutX="5.0" layoutY="132.0" prefHeight="243.0" prefWidth="677.0">
+         <columns>
+            <TableColumn fx:id="isbnColumn" prefWidth="77.0" text="ID" />
+            <TableColumn fx:id="titleColumn" prefWidth="176.0" text="Title" />
+            <TableColumn fx:id="authorColumn" prefWidth="111.0" text="Author" />
+            <TableColumn fx:id="publisherColumn" prefWidth="108.0" text="Publisher" />
+            <TableColumn fx:id="categoriesColumn" prefWidth="90.0" text="Categories" />
+            <TableColumn fx:id="yearColumn" prefWidth="51.0" text="Year" />
+            <TableColumn fx:id="ratingColumn" prefWidth="60.0" text="Rating" />
+         </columns>
+      </TableView>
+      <TextField fx:id="takeByIsbnTF" layoutX="566.0" layoutY="57.0" prefHeight="26.0" prefWidth="83.0" promptText="11-12-13" />
    </children>
 </AnchorPane>
