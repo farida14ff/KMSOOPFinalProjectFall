@@ -8,12 +8,18 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import sample.db.DataBaseHandler;
 import sample.login.animations.Shake;
 import sample.mosels.Admin;
 import sample.mosels.User;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -37,7 +43,23 @@ public class Controller {
     private Button loginSignUpButon;
 
     @FXML
-    void initialize() {
+    private ImageView bookImg;
+
+    @FXML
+    private ImageView usernameImg;
+
+    @FXML
+    private ImageView passwordImg;
+
+    @FXML
+    void initialize() throws FileNotFoundException {
+
+
+
+
+//        File file = new File("/sample/img/book.png");
+//        Image image = new Image(file.toURI().toString());
+//        bookImg.setImage(image);
 
         authSigninButton.setOnAction(event -> {
             String loginText = login_field.getText().trim();

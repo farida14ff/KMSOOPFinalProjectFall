@@ -10,9 +10,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="534.0" prefWidth="687.0" style="-fx-background-color: #1aa4ee;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.user.MainPaneUserController">
     <children>
-        <ImageView fitHeight="49.0" fitWidth="43.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="bookImg" fitHeight="49.0" fitWidth="43.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../../../../../Downloads/book.png" />
+                <Image url="@../img/book.png" />
             </image>
         </ImageView>
         <Label layoutX="67.0" layoutY="41.0" text="Library Management System" textFill="WHITE" />
