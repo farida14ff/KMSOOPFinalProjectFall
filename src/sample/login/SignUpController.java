@@ -5,10 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -59,7 +56,7 @@ public class SignUpController {
 
         signUpButton.setOnAction(event ->{
             signupMewUser();
-            openNewWindow("/sample/user/mainContentUser.fxml");
+//            openNewWindow("/sample/user/mainContentUser.fxml");
 
         });
 
@@ -104,6 +101,12 @@ public class SignUpController {
         User user = new User(firstName, lastName,userName,password,status);
 
         dbHandler.signUpUser(user);
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Information Dialog");
+        alert.setHeaderText(null);
+        alert.setContentText("You have successfully registered!");
+        alert.showAndWait();
     }
 
     public void openNewWindow(String window){

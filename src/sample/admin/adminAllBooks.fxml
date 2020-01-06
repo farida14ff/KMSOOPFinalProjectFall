@@ -14,12 +14,12 @@
       <TableView fx:id="bookTable" layoutX="7.0" layoutY="50.0" prefHeight="243.0" prefWidth="681.0">
          <columns>
             <TableColumn fx:id="isbnColumn" prefWidth="96.0" text="ID" />
-            <TableColumn fx:id="titleColumn" prefWidth="145.0" text="Title" />
-            <TableColumn fx:id="authorColumn" prefWidth="122.0" text="Author" />
-            <TableColumn fx:id="publisherColumn" prefWidth="110.0" text="Publisher" />
-            <TableColumn fx:id="categoriesColumn" prefWidth="89.0" text="Categories" />
-            <TableColumn fx:id="yearColumn" prefWidth="61.0" text="Year" />
-            <TableColumn fx:id="ratingColumn" prefWidth="57.0" text="Rating" />
+            <TableColumn fx:id="titleColumn" prefWidth="107.0" text="Title" />
+            <TableColumn fx:id="authorColumn" prefWidth="128.0" text="Author" />
+            <TableColumn fx:id="publisherColumn" prefWidth="118.0" text="Publisher" />
+            <TableColumn fx:id="categoriesColumn" prefWidth="106.0" text="Categories" />
+            <TableColumn fx:id="yearColumn" prefWidth="70.0" text="Year" />
+            <TableColumn fx:id="ratingColumn" prefWidth="55.0" text="Rating" />
          </columns>
       </TableView>
       <Label fx:id="lableListOAB" layoutX="261.0" prefHeight="43.0" prefWidth="170.0" text="List of  all books">
