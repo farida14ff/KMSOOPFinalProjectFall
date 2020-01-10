@@ -86,6 +86,40 @@ public class SignUpController {
         String userName = login_field.getText();
         String password = password_field.getText();
         String status = "";
+        boolean numeric = true;
+        boolean numeric1 = true;
+        numeric = firstName.matches("-?\\d+(\\.\\d+)?");
+        numeric1 = lastName.matches("-?\\d+(\\.\\d+)?");
+
+        if (firstName.isEmpty() || lastName.isEmpty() || userName.isEmpty() || password.isEmpty() ){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText(null);
+            alert.setContentText("Please give all information");
+            alert.showAndWait();
+        }
+        else if(numeric || numeric1) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText(null);
+            alert.setContentText("Firstname and lastename can not be a number");
+            alert.showAndWait();
+        }
+
+            else{
+
+                User user = new User(firstName, lastName,userName,password,status);
+
+                dbHandler.signUpUser(user);
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Information Dialog");
+                alert.setHeaderText(null);
+                alert.setContentText("You have successfully registered!");
+                alert.showAndWait();
+            }
+        }
+
 
 
 //        if (sgnUpCheckboxAdmin.isSelected()) {
@@ -98,16 +132,14 @@ public class SignUpController {
 //            newFile = "/sample/menu/menu.fxml";
 //        }
 
-        User user = new User(firstName, lastName,userName,password,status);
 
-        dbHandler.signUpUser(user);
 
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Information Dialog");
-        alert.setHeaderText(null);
-        alert.setContentText("You have successfully registered!");
-        alert.showAndWait();
-    }
+//        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+//        alert.setTitle("Information Dialog");
+//        alert.setHeaderText(null);
+//        alert.setContentText("You have successfully registered!");
+//        alert.showAndWait();
+
 
     public void openNewWindow(String window){
 
